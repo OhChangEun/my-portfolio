@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./styles/global.css";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 // 프로젝트 타입
 type Project = {
@@ -62,8 +63,8 @@ function CustomInput({
   isReadonly?: boolean;
   error?: string;
 }) {
-  const [focused, setFocused] = useState(false);
-  const showLabel = focused || value.length > 0;
+  //const [focused, setFocused] = useState(false);
+  //const showLabel = focused || value.length > 0;
 
   return (
     <div className="flex flex-col gap-1 mb-4">
@@ -73,8 +74,8 @@ function CustomInput({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        onFocus={() => setFocused(true)}
-        onBlur={() => setFocused(false)}
+        //onFocus={() => setFocused(true)}
+        //onBlur={() => setFocused(false)}
         readOnly={isReadonly}
         className="w-full px-3 py-2 border border-secondary rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
       />
@@ -127,7 +128,7 @@ const MENU_ITEMS = [
 ];
 
 export default function Portfolio() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  //const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const [selectedMenu, setSelectedMenu] = useState("projects");
 
@@ -182,7 +183,7 @@ export default function Portfolio() {
             {PROJECTS.map((p) => (
               <div
                 key={p.id}
-                onClick={() => setSelectedProject(p)}
+                //onClick={() => setSelectedProject(p)}
                 className="bg-white shadow hover:shadow-lg cursor-pointer rounded-lg p-6 transition"
               >
                 <h3 className="text-lg font-semibold mb-2">{p.title}</h3>
@@ -232,6 +233,8 @@ export default function Portfolio() {
         © {new Date().getFullYear()} 창은 오 — Built with TypeScript + React +
         Tailwind
       </footer>
+
+      <ScrollToTopButton />
     </div>
   );
 }

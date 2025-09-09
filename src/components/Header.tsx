@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import HeaderNav from "./HeaderNav";
 
 interface HeaderProps {
   menuItems: { id: string; label: string }[];
   selectedMenu: string;
-  sectionRefs: { [key: string]: React.RefObject<HTMLDivElement> };
+  sectionRefs: { [key: string]: React.RefObject<HTMLDivElement | null> };
 }
 
-function Header({ menuItems, selectedMenu, sectionRefs }: HeaderProps) {
+const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -39,24 +40,15 @@ function Header({ menuItems, selectedMenu, sectionRefs }: HeaderProps) {
         >
           창은 포트폴리오
         </h1>
-        <nav className="flex gap-6 text-sm font-light">
-          {menuItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleMenuClick(item.id)}
-              className={`px-2 py-1 rounded hover:text-primary ${
-                selectedMenu === item.id
-                  ? "text-primary font-normal"
-                  : "text-secondary"
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+
+        <HeaderNav
+          menuItems={menuItems}
+          selectedMenu={selectedMenu}
+          handleMenuClick={handleMenuClick}
+        />
       </div>
     </header>
   );
-}
+};
 
 export default Header;
