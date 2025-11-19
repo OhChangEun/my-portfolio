@@ -31,13 +31,13 @@ const ModalContainer = ({ children, title, onClose }: ModalContainerProps) => {
               </h2>
               <button
                 onClick={onClose}
-                className="px-2 pb-1 rounded hover:text-gray-800 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
+                className="px-2 py-1 mb-1 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
               >
                 ✕
               </button>
             </div>
             {/* 모달 본문 */}
-            <div className="pt-4 p-2 scrollbar-custom overflow-scroll ">
+            <div className="pt-4 p-2 scrollbar-custom overflow-auto">
               {children}
             </div>
           </div>

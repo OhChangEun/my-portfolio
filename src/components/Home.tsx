@@ -1,4 +1,5 @@
 import profileImg from "../assets/images/profile.png";
+import ButtonPreview from "./public/Preview";
 
 interface HomeProps {
   refProp: React.RefObject<HTMLDivElement | null>;
@@ -12,6 +13,8 @@ const Home = ({ refProp }: HomeProps) => {
       className="h-screen flex items-center justify-center"
     >
       <div className="flex min-w-7/12 items-center justify-between">
+        {/* <ButtonPreview /> */}
+
         {/* 왼쪽: 소개글 */}
         <div className="max-w-md text-left flex flex-col gap-3">
           <h2 className="text-6xl font-normal mb-4">developer</h2>

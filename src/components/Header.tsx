@@ -41,7 +41,7 @@ const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
     >
       <div className="container mx-auto flex items-center gap-16 pt-4 pb-4 px-16">
         <h1
-          className="text-xl cursor-pointer"
+          className="text-xl font-semibold cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           창은 포트폴리오

@@ -60,7 +60,7 @@ export default function Portfolio() {
       />
 
       {/* 메인 */}
-      <main className="flex-1 container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
+      <main className="container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
         <Home refProp={homeRef} />
         <AboutMe refProp={aboutMeRef} />
         <ProjectList refProp={projectsRef} projects={PROJECTS} />
