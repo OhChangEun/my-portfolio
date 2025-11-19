@@ -1,8 +1,16 @@
 import profileImg from "../assets/images/profile.png";
 
-const Intro = () => {
+interface HomeProps {
+  refProp: React.RefObject<HTMLDivElement | null>;
+}
+
+const Home = ({ refProp }: HomeProps) => {
   return (
-    <section id="about" className="h-screen flex items-center justify-center">
+    <section
+      ref={refProp}
+      id="home"
+      className="h-screen flex items-center justify-center"
+    >
       <div className="flex min-w-7/12 items-center justify-between">
         {/* 왼쪽: 소개글 */}
         <div className="max-w-md text-left flex flex-col gap-3">
@@ -26,4 +34,4 @@ const Intro = () => {
     </section>
   );
 };
-export default Intro;
+export default Home;

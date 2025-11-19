@@ -48,7 +48,7 @@ const ScrollToTopButton = ({
         if (e.key === "Enter") scrollToTop();
       }}
       // 화면 오른쪽 아래 고정
-      className={`fixed bottom-6 right-6 z-50 ${sizeClass} flex items-center justify-center rounded-full shadow-lg focus:outline-none transition-transform transform ${
+      className={`fixed bottom-6 right-6 z-50 ${sizeClass} cursor-pointer flex items-center justify-center rounded-full shadow-lg focus:outline-none transition-transform transform ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0 pointer-events-none"

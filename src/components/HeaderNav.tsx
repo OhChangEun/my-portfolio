@@ -10,12 +10,12 @@ const HeaderNav = ({
   handleMenuClick,
 }: HeaderNavProps) => {
   return (
-    <nav className="flex gap-6 text-sm font-light">
+    <nav className="flex gap-5 text-sm font-light">
       {menuItems.map((item) => (
         <button
           key={item.id}
           onClick={() => handleMenuClick(item.id)}
-          className={`px-2 py-1 rounded hover:text-primary focus:outline-none ${
+          className={`px-2 py-1 rounded hover:text-primary focus:outline-none cursor-pointer ${
             selectedMenu === item.id
               ? "text-primary font-normal"
               : "text-secondary"

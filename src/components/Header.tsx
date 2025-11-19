@@ -24,7 +24,13 @@ const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
   }, []);
 
   const handleMenuClick = (id: string) => {
-    sectionRefs[id]?.current?.scrollIntoView({ behavior: "smooth" });
+    if (id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    sectionRefs[id]?.current?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (

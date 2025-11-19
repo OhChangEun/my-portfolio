@@ -1,27 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 import "./styles/global.css";
 import Header from "./components/Header";
-import Intro from "./components/Intro";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import AboutMe from "./components/AboutMe";
 import ProjectList from "./components/ProjectList";
 import { PROJECTS } from "./data/projects";
+import Home from "./components/Home";
 
 const MENU_ITEMS = [
+  { id: "home", label: "Home" },
   { id: "aboutMe", label: "About Me" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
 
 export default function Portfolio() {
-  const [selectedMenu, setSelectedMenu] = useState("aboutMe");
+  const [selectedMenu, setSelectedMenu] = useState("home");
 
+  const homeRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   const sectionRefs: { [key: string]: React.RefObject<HTMLDivElement | null> } =
     {
+      home: homeRef,
       aboutMe: aboutMeRef,
       projects: projectsRef,
       contact: contactRef,
@@ -31,6 +34,7 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
+      console.log(scrollPos);
 
       for (const item of MENU_ITEMS) {
         const ref = sectionRefs[item.id];
@@ -46,7 +50,7 @@ export default function Portfolio() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sectionRefs]);
 
   return (
     <div className="bg-tertiary text-primary min-h-screen flex flex-col">
@@ -57,9 +61,8 @@ export default function Portfolio() {
       />
 
       {/* 메인 */}
-      <main className="flex-1 container mx-auto px-6 md:px-12 lg:px-32 space-y-32">
-        <Intro />
-
+      <main className="flex-1 container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
+        <Home refProp={homeRef} />
         <AboutMe refProp={aboutMeRef} />
         <ProjectList refProp={projectsRef} projects={PROJECTS} />
 
