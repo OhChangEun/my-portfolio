@@ -1,5 +1,4 @@
 import profileImg from "../assets/images/profile.png";
-import ButtonPreview from "./public/Preview";
 
 interface HomeProps {
   refProp: React.RefObject<HTMLDivElement | null>;
