@@ -34,7 +34,6 @@ export default function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
-      console.log(scrollPos);
 
       for (const item of MENU_ITEMS) {
         const ref = sectionRefs[item.id];
