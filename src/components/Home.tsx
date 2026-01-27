@@ -90,24 +90,24 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://github.com/OhChangEun"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 hover:bg-blue-50 rounded-lg transition-all duration-300 border border-gray-200 hover:border-blue-400"
+              className="group p-3 rounded-lg transition-all duration-300 border border-gray-300 hover:border-gray-800 hover:bg-gray-800"
               title="GitHub"
             >
               <SiGithub
                 size={24}
-                className="text-gray-700 group-hover:text-gray-600 transition-colors"
+                className="text-gray-700 group-hover:text-white transition-colors duration-300"
               />
             </a>
             <a
-              href="https://blog.naver.com"
+              href="https://www.notion.so/s-207e4e4f965780c28a75e68a3a6f4060?source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 hover:bg-red-50 rounded-lg transition-all duration-300 border border-gray-200 hover:border-red-400"
+              className="group p-3 rounded-lg transition-all duration-300 border border-gray-300 hover:border-gray-800 hover:bg-gray-800"
               title="Blog"
             >
               <SiNotion
                 size={24}
-                className="text-gray-700 group-hover:text-red-500 transition-colors"
+                className="text-gray-700 group-hover:text-white transition-colors duration-300"
               />
             </a>
           </div>

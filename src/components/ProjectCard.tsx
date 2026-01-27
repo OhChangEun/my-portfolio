@@ -13,11 +13,11 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group h-72 rounded-lg p-6 bg-white shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between border border-gray-100 hover:border-red-200 cursor-pointer"
+      className="group rounded-lg p-6 bg-white shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between border border-gray-100 hover:border-red-200 cursor-pointer"
       onClick={onClick}
     >
       {/* 이미지 또는 아이콘 영역 */}
-      <div className="mb-4 h-24 bg-gradient-to-r from-blue-50 to-red-50 rounded-md flex items-center justify-center overflow-hidden">
+      <div className="mb-4 h-64 bg-gradient-to-r from-blue-50 to-red-50 rounded-md flex items-center justify-center overflow-hidden">
         {project.images && project.images.length > 0 ? (
           <img
             src={project.images[0].src}
@@ -31,10 +31,10 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
 
       {/* 제목 + 설명 */}
       <div className="flex-1 mb-3">
-        <h3 className="text-lg font-bold text-primary mb-1 group-hover:text-red-600 transition-colors">
+        <h3 className="text-lg font-bold text-primary group-hover:text-red-600 transition-colors">
           {project.title}
         </h3>
-        <p className="text-xs text-secondary line-clamp-2">
+        <p className="text-sm text-secondary line-clamp-2">
           {project.shortDescription}
         </p>
       </div>
@@ -57,14 +57,8 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       </div>
 
       {/* 하단 버튼 */}
-      <div className="flex justify-between items-center">
-        <span className="text-xs text-gray-400">자세히 보기</span>
-        <motion.div
-          whileHover={{ x: 5 }}
-          transition={{ type: "spring", stiffness: 400 }}
-        >
-          <SlideArrow className="text-lg text-red-600" />
-        </motion.div>
+      <div className="flex justify-end items-center">
+        <SlideArrow className="text-lg text-red-600" />
       </div>
     </motion.div>
   );

@@ -1,7 +1,7 @@
 import type { InternshipExperience } from "../types/Internship";
 
 export const INTERNSHIP_EXPERIENCE: InternshipExperience = {
-  company: "지아이티",
+  company: "지아이티(GIT)",
   position: "소프트웨어 개발 인턴",
   duration: "2024.7 ~ 2024.12",
   totalDuration: "6M",

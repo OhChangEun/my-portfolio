@@ -37,7 +37,7 @@ const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
     <header
       className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "backdrop-blur-md bg-white/30 shadow-[0_1px_0_rgba(0,0,0,0.08)]"
+          ? "backdrop-blur-md bg-white/30 shadow-[0_0.8px_0_rgba(0,0,0,0.08)]"
           : "bg-transparent"
       }`}
     >

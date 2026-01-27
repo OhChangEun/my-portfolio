@@ -31,7 +31,7 @@ const ModalContainer = ({ children, title, onClose }: ModalContainerProps) => {
               </h2>
               <button
                 onClick={onClose}
-                className="px-2 mb-1 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
+                className="px-2.5 pt-1 pb-1.5 mb-4 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
               >
                 ✕
               </button>

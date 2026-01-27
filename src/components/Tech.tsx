@@ -93,36 +93,33 @@ const Tech = ({ refProp }: TechProps) => {
         {TECH_DATA.map((category, idx) => (
           <div key={idx}>
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-primary mb-1">
+              <h3 className="text-lg font-semibold text-primary mb-3">
                 {category.title}
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                {category.items.map((tech, techIdx) => (
-                  <div
-                    key={techIdx}
-                    className="group flex flex-col items-center gap-2 p-4 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 cursor-default"
-                  >
-                    {tech.icon && (
-                      <div
-                        className="text-3xl transition-transform duration-300 group-hover:scale-110"
-                        style={{ color: tech.color }}
-                      >
-                        {tech.icon}
-                      </div>
-                    )}
-                    <span className="text-xs font-medium text-center text-primary group-hover:text-blue-600 transition-colors">
-                      {tech.name}
-                    </span>
-                  </div>
-                ))}
-              </div>
+            <div className="flex flex-wrap gap-3">
+              {category.items.map((tech, techIdx) => (
+                <div
+                  key={techIdx}
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-100 rounded-full"
+                >
+                  {tech.icon && (
+                    <div className="text-lg" style={{ color: tech.color }}>
+                      {tech.icon}
+                    </div>
+                  )}
+                  <span className="text-sm font-medium text-primary">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </section>
-    );
-  };
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
 
 export default Tech;

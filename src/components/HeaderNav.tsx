@@ -17,8 +17,8 @@ const HeaderNav = ({
           onClick={() => handleMenuClick(item.id)}
           className={`px-2 py-1 rounded hover:text-primary focus:outline-none cursor-pointer ${
             selectedMenu === item.id
-              ? "text-primary font-normal"
-              : "text-secondary"
+              ? "text-primary font-medium"
+              : "text-gray-600"
           }`}
         >
           {item.label}

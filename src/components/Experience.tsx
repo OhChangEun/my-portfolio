@@ -12,15 +12,17 @@ const Experience = ({ refProp }: ExperienceProps) => {
       id="experience"
       className="min-h-screen flex flex-col justify-center py-20"
     >
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold mb-2">
-          {INTERNSHIP_EXPERIENCE.company}
-        </h2>
-        <p className="text-secondary text-lg">
-          {INTERNSHIP_EXPERIENCE.position} • {INTERNSHIP_EXPERIENCE.duration}
-        </p>
-        <p className="text-secondary text-sm mt-2">
-          {INTERNSHIP_EXPERIENCE.department}
+      <div className="pl-1 mb-8">
+        <div className="items-baseline space-x-2 mb-2">
+          <h2 className="text-3xl font-bold ">
+            {INTERNSHIP_EXPERIENCE.company}
+          </h2>
+          <div className="text-gray-700 text-sm">
+            차량 통신 기반 진단 솔루션 기업
+          </div>
+        </div>
+        <p className="text-gray-400 text-base">
+          {INTERNSHIP_EXPERIENCE.duration}
         </p>
       </div>
 
