@@ -53,7 +53,7 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                 </div>
               </div>
               {image.caption && (
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-3">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent p-3">
                   <p className="text-xs text-white">{image.caption}</p>
                 </div>
               )}
@@ -85,7 +85,7 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                 <img
                   src={images[selectedIndex].src}
                   alt={images[selectedIndex].alt}
-                  className="w-full h-auto max-h-[80vh] object-contain"
+                  className="w-full h-128 max-h-[80vh] object-contain"
                 />
               </div>
 
@@ -123,8 +123,8 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                 <>
                   <motion.button
                     onClick={goToPrevious}
-                    className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    className="absolute left-0 top-1/2 -translate-y-11/12 -translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <FiChevronLeft className="text-2xl" />
@@ -132,8 +132,8 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
 
                   <motion.button
                     onClick={goToNext}
-                    className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                    whileHover={{ scale: 1.1 }}
+                    className="absolute right-0 top-1/2 -translate-y-11/12 translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
                     <FiChevronRight className="text-2xl" />
@@ -144,11 +144,11 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
               {/* 닫기 버튼 */}
               <motion.button
                 onClick={() => setSelectedIndex(null)}
-                className="absolute top-4 right-4 bg-white/20 hover:bg-white/40 text-white p-2 rounded-full transition-colors"
-                whileHover={{ scale: 1.1 }}
+                className="absolute top-4 right-4 cursor-pointer bg-black/70 hover:bg-black/60 text-white p-1.5 rounded-full transition-colors"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FiX className="text-2xl" />
+                <FiX className="text-xl" />
               </motion.button>
             </motion.div>
           </motion.div>

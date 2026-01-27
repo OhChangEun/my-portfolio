@@ -31,6 +31,14 @@ export default function Portfolio() {
       contact: contactRef,
     };
 
+  // 새로고침 시 맨 위로 고정
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
+
   // 스크롤 위치 감지
   useEffect(() => {
     const handleScroll = () => {

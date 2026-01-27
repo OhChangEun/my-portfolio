@@ -114,7 +114,7 @@ const InternshipCard = ({ project }: InternshipCardProps) => {
 
           {/* 프로젝트 이미지 갤러리 */}
           {project.images && project.images.length > 0 && (
-            <div className="pt-4 border-t border-gray-100">
+            <div className="flex pt-4 border-t border-gray-100">
               <ProjectImageGallery images={project.images} />
             </div>
           )}

@@ -1,5 +1,7 @@
 import profileImg from "../assets/images/profile.png";
 import { SiGithub, SiNotion } from "react-icons/si";
+import { SiGmail } from "react-icons/si";
+import { useState } from "react";
 
 interface HomeProps {
   refProp: React.RefObject<HTMLDivElement | null>;
@@ -7,10 +9,23 @@ interface HomeProps {
 }
 
 const Home = ({ refProp, sectionRefs }: HomeProps) => {
+  const [copyMessage, setCopyMessage] = useState<string | null>(null);
+
   const scrollToSection = (sectionId: string) => {
     const ref = sectionRefs?.[sectionId];
     if (ref?.current) {
       ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleCopyEmail = async () => {
+    const email = "dwc07109@gmail.com";
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopyMessage("이메일이 복사되었습니다");
+      setTimeout(() => setCopyMessage(null), 2000);
+    } catch (err) {
+      console.error("Failed to copy email:", err);
     }
   };
   return (
@@ -40,18 +55,28 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
                 <p>
                   <button
                     onClick={() => scrollToSection("experience")}
-                    className="text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
+                    className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
                   >
                     6 months
                   </button>{" "}
                   automotive internship at GIT
                 </p>
                 <p>
+                  <p>
+                    <button
+                      onClick={() => scrollToSection("projects")}
+                      className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
+                    >
+                      3-time
+                    </button>{" "}
+                    project award winner · Completed Hyundai AutoEver Mobility
+                    School
+                  </p>
                   <a
                     href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11890887"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                    className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
                   >
                     Capstone design project paper
                   </a>{" "}
@@ -59,22 +84,11 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
                 </p>
 
                 <p>
-                  <button
-                    onClick={() => scrollToSection("projects")}
-                    className="text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
-                  >
-                    3-time
-                  </button>{" "}
-                  project award winner · Completed Hyundai AutoEver Mobility
-                  School
-                </p>
-
-                <p>
                   <a
                     href="https://solved.ac/profile/dwc07109"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+                    className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
                   >
                     Gold I
                   </a>{" "}
@@ -90,7 +104,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://github.com/OhChangEun"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 rounded-lg transition-all duration-300 border border-gray-300 hover:border-gray-800 hover:bg-gray-800"
+              className="group p-3 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
               title="GitHub"
             >
               <SiGithub
@@ -102,14 +116,29 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://www.notion.so/s-207e4e4f965780c28a75e68a3a6f4060?source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 rounded-lg transition-all duration-300 border border-gray-300 hover:border-gray-800 hover:bg-gray-800"
-              title="Blog"
+              className="group p-3 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              title="notion"
             >
               <SiNotion
                 size={24}
                 className="text-gray-700 group-hover:text-white transition-colors duration-300"
               />
             </a>
+            <button
+              onClick={handleCopyEmail}
+              className="group relative p-3 cursor-pointer rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              title="Email"
+            >
+              <SiGmail
+                size={24}
+                className="text-gray-700 group-hover:text-white transition-colors duration-300"
+              />
+              {copyMessage && (
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded whitespace-nowrap">
+                  {copyMessage}
+                </div>
+              )}
+            </button>
           </div>
         </div>
 
