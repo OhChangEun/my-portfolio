@@ -33,7 +33,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
     <section
       ref={refProp}
       id="home"
-      className="min-h-screen flex justify-center py-20"
+      className="min-h-screen flex justify-center pb-16"
     >
       <div className="flex min-w-7/12 items-center justify-between gap-12">
         {/* 왼쪽: 소개글 */}
@@ -106,7 +106,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://github.com/OhChangEun"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              className="group p-3 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
               title="GitHub"
             >
               <SiGithub
@@ -118,11 +118,11 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://www.notion.so/s-207e4e4f965780c28a75e68a3a6f4060?source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-3 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              className="group p-3 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
               title="notion"
             >
               <SiNotion
-                size={24}
+                size={25}
                 className="text-gray-700 group-hover:text-white transition-colors duration-300"
               />
             </a>
@@ -130,7 +130,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
               href="https://solved.ac/profile/dwc07109"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2.5 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              className="group p-2.5 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
               title="BOJ"
             >
               <FaCode
@@ -140,7 +140,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
             </a>
             <button
               onClick={handleCopyEmail}
-              className="group relative p-3 cursor-pointer rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              className="group relative p-3 cursor-pointer rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
               title="Email"
             >
               <SiGmail
@@ -161,7 +161,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
           <img
             src={profileImg}
             alt="Profile"
-            className="w-91 h-119 rounded-sm object-cover drop-shadow-lg"
+            className="w-91 h-119 rounded-sm object-cover drop-shadow-xl"
           />
         </div>
       </div>

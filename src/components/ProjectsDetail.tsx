@@ -24,7 +24,7 @@ const ProjectDetail = ({ projectId }: ProjectDetailProps) => {
 
   const tabs: Array<{ id: TabType; label: string }> = [
     { id: "info", label: "프로젝트 정보" },
-    { id: "myRole", label: "나의 역할" },
+    { id: "myRole", label: "담당 역할" },
     { id: "technical", label: "기술적 의사결정" },
     ...(project.images && project.images.length > 0
       ? [{ id: "gallery" as TabType, label: "스크린샷" }]
@@ -161,13 +161,13 @@ const ProjectDetail = ({ projectId }: ProjectDetailProps) => {
           </div>
         )}
 
-        {/* 탭 2: 나의 역할 */}
+        {/* 탭 2: 담당 역할 */}
         {activeTab === "myRole" && (
           <div className="space-y-3">
-            {/* 나의 담당 역할 */}
+            {/* 담당 역할 */}
             <div>
               <h4 className="font-semibold text-sm text-primary mb-3">
-                나의 담당 역할
+                담당 역할
               </h4>
               {Array.isArray(project.projectInfo.myRole) &&
               project.projectInfo.myRole.length > 0 &&
