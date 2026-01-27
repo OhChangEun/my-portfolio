@@ -89,11 +89,11 @@ const Tech = ({ refProp }: TechProps) => {
         <h2 className="text-3xl font-bold">Tech Stack</h2>
       </div>
 
-      <div className="space-y-12">
+      <div className="space-y-14">
         {TECH_DATA.map((category, idx) => (
           <div key={idx}>
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-primary mb-3">
+            <div className="mb-4">
+              <h3 className="text-lg font-normal text-primary mb-3">
                 {category.title}
               </h3>
             </div>
@@ -102,7 +102,7 @@ const Tech = ({ refProp }: TechProps) => {
               {category.items.map((tech, techIdx) => (
                 <div
                   key={techIdx}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white border border-gray-100 rounded-full"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-white rounded-lg"
                 >
                   {tech.icon && (
                     <div className="text-lg" style={{ color: tech.color }}>

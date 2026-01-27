@@ -61,7 +61,7 @@ export default function Portfolio() {
   }, [sectionRefs]);
 
   return (
-    <div className="bg-gradient-to-br from-white via-blue-50 to-blue-200 text-primary min-h-screen flex flex-col">
+    <div className="bg-gradient-to-br from-white via-blue-100 to-blue-500 text-primary min-h-screen flex flex-col">
       <Header
         menuItems={MENU_ITEMS}
         selectedMenu={selectedMenu}

@@ -238,11 +238,6 @@ export const PROJECTS: Project[] = [
         caption: "리뷰어 상세 프로필 페이지",
       },
       {
-        src: "/src/assets/images/cinever/search-trending.png",
-        alt: "Cinever - 추천 검색어",
-        caption: "실시간 추천 검색어",
-      },
-      {
         src: "/src/assets/images/cinever/search-results.png",
         alt: "Cinever - 검색 결과",
         caption: "통합 검색 결과 페이지",

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiChevronLeft, FiChevronRight, FiX } from "react-icons/fi";
+import { createPortal } from "react-dom";
 
 interface ProjectImageGalleryProps {
   images?: Array<{ src: string; alt: string; caption?: string }>;
@@ -62,98 +63,100 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
         </div>
       </div>
 
-      {/* 풀스크린 모달 */}
-      <AnimatePresence>
-        {selectedIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
-            onClick={() => setSelectedIndex(null)}
-          >
+      {/* 풀스크린 모달 - Portal로 렌더링 */}
+      {selectedIndex !== null &&
+        createPortal(
+          <AnimatePresence>
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="relative max-w-4xl w-full"
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-9999 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+              onClick={() => setSelectedIndex(null)}
             >
-              {/* 이미지 */}
-              <div className="bg-black rounded-lg overflow-hidden">
-                <img
-                  src={images[selectedIndex].src}
-                  alt={images[selectedIndex].alt}
-                  className="w-full h-128 max-h-[80vh] object-contain"
-                />
-              </div>
-
-              {/* 캡션 */}
-              <div className="text-center mt-4">
-                <p className="text-white text-sm">
-                  {images[selectedIndex].alt}
-                </p>
-                {images[selectedIndex].caption && (
-                  <p className="text-gray-300 text-xs mt-2">
-                    {images[selectedIndex].caption}
-                  </p>
-                )}
-              </div>
-
-              {/* 이미지 인디케이터 */}
-              <div className="flex justify-center gap-2 mt-4">
-                {images.map((_, idx) => (
-                  <motion.button
-                    key={idx}
-                    onClick={() => setSelectedIndex(idx)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      selectedIndex === idx
-                        ? "bg-white w-6"
-                        : "bg-gray-500 hover:bg-gray-400"
-                    }`}
-                    whileHover={{ scale: 1.2 }}
-                    whileTap={{ scale: 0.9 }}
-                  />
-                ))}
-              </div>
-
-              {/* 네비게이션 버튼 */}
-              {images.length > 1 && (
-                <>
-                  <motion.button
-                    onClick={goToPrevious}
-                    className="absolute left-0 top-1/2 -translate-y-11/12 -translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FiChevronLeft className="text-2xl" />
-                  </motion.button>
-
-                  <motion.button
-                    onClick={goToNext}
-                    className="absolute right-0 top-1/2 -translate-y-11/12 translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <FiChevronRight className="text-2xl" />
-                  </motion.button>
-                </>
-              )}
-
-              {/* 닫기 버튼 */}
-              <motion.button
-                onClick={() => setSelectedIndex(null)}
-                className="absolute top-4 right-4 cursor-pointer bg-black/70 hover:bg-black/60 text-white p-1.5 rounded-full transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="relative max-w-4xl w-full"
+                onClick={(e) => e.stopPropagation()}
               >
-                <FiX className="text-xl" />
-              </motion.button>
+                {/* 이미지 */}
+                <div className="bg-black rounded-lg overflow-hidden">
+                  <img
+                    src={images[selectedIndex].src}
+                    alt={images[selectedIndex].alt}
+                    className="w-full h-128 max-h-[80vh] object-scale-down"
+                  />
+                </div>
+
+                {/* 캡션 */}
+                <div className="text-center mt-4">
+                  <p className="text-white text-sm">
+                    {images[selectedIndex].alt}
+                  </p>
+                  {images[selectedIndex].caption && (
+                    <p className="text-gray-300 text-xs mt-2">
+                      {images[selectedIndex].caption}
+                    </p>
+                  )}
+                </div>
+
+                {/* 이미지 인디케이터 */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {images.map((_, idx) => (
+                    <motion.button
+                      key={idx}
+                      onClick={() => setSelectedIndex(idx)}
+                      className={`w-2 h-2 rounded-full transition-all ${
+                        selectedIndex === idx
+                          ? "bg-white w-6"
+                          : "bg-gray-500 hover:bg-gray-400"
+                      }`}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    />
+                  ))}
+                </div>
+
+                {/* 네비게이션 버튼 */}
+                {images.length > 1 && (
+                  <>
+                    <motion.button
+                      onClick={goToPrevious}
+                      className="absolute left-0 top-60 -translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FiChevronLeft className="text-2xl" />
+                    </motion.button>
+
+                    <motion.button
+                      onClick={goToNext}
+                      className="absolute right-0 top-60 translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FiChevronRight className="text-2xl" />
+                    </motion.button>
+                  </>
+                )}
+
+                {/* 닫기 버튼 */}
+                <motion.button
+                  onClick={() => setSelectedIndex(null)}
+                  className="absolute top-4 right-4 cursor-pointer bg-black/70 hover:bg-black/60 text-white p-1.5 rounded-full transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <FiX className="text-xl" />
+                </motion.button>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </AnimatePresence>,
+          document.body,
         )}
-      </AnimatePresence>
     </>
   );
 };

@@ -2,6 +2,7 @@ import profileImg from "../assets/images/profile.png";
 import { SiGithub, SiNotion } from "react-icons/si";
 import { SiGmail } from "react-icons/si";
 import { useState } from "react";
+import { FaCode } from "react-icons/fa6";
 
 interface HomeProps {
   refProp: React.RefObject<HTMLDivElement | null>;
@@ -62,28 +63,29 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
                   automotive internship at GIT
                 </p>
                 <p>
-                  <p>
-                    <button
-                      onClick={() => scrollToSection("projects")}
-                      className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
-                    >
-                      3-time
-                    </button>{" "}
-                    project award winner · Completed Hyundai AutoEver Mobility
-                    School
-                  </p>
+                  <button
+                    onClick={() => scrollToSection("projects")}
+                    className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 font-inherit"
+                  >
+                    3-time
+                  </button>{" "}
+                  project award winner · Completed Hyundai AutoEver Mobility
+                  School
+                </p>
+                <p>
+                  Capstone Design Paper –{" "}
                   <a
                     href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11890887"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-2xl text-blue-600 hover:underline decoration-1 underline-offset-3 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
                   >
-                    Capstone design project paper
+                    Authored
                   </a>{" "}
-                  author and award recipient
+                  & Awarded
                 </p>
 
-                <p>
+                {/* <p>
                   <a
                     href="https://solved.ac/profile/dwc07109"
                     target="_blank"
@@ -93,7 +95,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
                     Gold I
                   </a>{" "}
                   in BOJ
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
@@ -121,6 +123,18 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
             >
               <SiNotion
                 size={24}
+                className="text-gray-700 group-hover:text-white transition-colors duration-300"
+              />
+            </a>
+            <a
+              href="https://solved.ac/profile/dwc07109"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-2.5 rounded-lg transition-all duration-300 border border-gray-400 hover:border-gray-800 hover:bg-gray-800"
+              title="BOJ"
+            >
+              <FaCode
+                size={28}
                 className="text-gray-700 group-hover:text-white transition-colors duration-300"
               />
             </a>

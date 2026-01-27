@@ -6,17 +6,40 @@ import ProjectImageGallery from "./ProjectImageGallery";
 
 interface InternshipCardProps {
   project: InternshipProject;
+  index?: number;
 }
 
-const InternshipCard = ({ project }: InternshipCardProps) => {
+const InternshipCard = ({ project, index = 0 }: InternshipCardProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0.1, y: -10 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6 border border-gray-100"
+      viewport={{ once: true }}
+      transition={{
+        duration: 1.5,
+        delay: index * 0.2,
+        ease: [0.25, 0.46, 0.45, 0.94],
+      }}
+      whileHover={{
+        scale: 1.005,
+        y: -2,
+        boxShadow: "0px 5px 10px rgba(59, 130, 246, 0.3)",
+        borderColor: "rgb(138, 160, 255)",
+        transition: {
+          duration: 0.1,
+        },
+      }}
+      animate={{
+        // 기본 상태로 돌아갈 때
+        scale: 1,
+        y: 0,
+        boxShadow: "0px 0px 0px rgba(59, 130, 246, 0)",
+        borderColor: "rgb(174, 187, 255, 0.7)",
+        transition: { duration: 0.2 },
+      }}
+      className="bg-white rounded-lg border p-6 mb-8"
     >
       {/* 헤더 */}
       <div
@@ -24,16 +47,13 @@ const InternshipCard = ({ project }: InternshipCardProps) => {
         onClick={() => setIsExpanded(!isExpanded)}
       >
         <div className="flex-1">
-          <div className="flex items-center gap-3 mb-2">
-            <h3 className="text-xl font-bold text-primary group-hover:text-red-600 transition-colors">
+          <div className="mb-3">
+            <h3 className="mb-1 text-xl font-bold text-primary transition-colors">
               {project.title}
             </h3>
-            <span className="text-xs bg-tertiary text-primary px-2 py-1 rounded">
-              {project.duration}
-            </span>
+            <p className="text-sm text-secondary mb-1">{project.team}</p>
           </div>
-          <p className="text-sm text-secondary mb-1">{project.team}</p>
-          <p className="text-sm text-gray-700">{project.overview}</p>
+          <p className="text-sm text-gray-800">{project.overview}</p>
         </div>
 
         <motion.div
@@ -71,7 +91,7 @@ const InternshipCard = ({ project }: InternshipCardProps) => {
             <ul className="space-y-2">
               {project.responsibilities.map((resp, idx) => (
                 <li key={idx} className="flex gap-3 text-sm">
-                  <span className="text-red-600 font-bold min-w-fit">•</span>
+                  <span className="text-blue-600 font-bold min-w-fit">•</span>
                   <span className="text-gray-700">{resp}</span>
                 </li>
               ))}
@@ -87,7 +107,7 @@ const InternshipCard = ({ project }: InternshipCardProps) => {
               {project.achievements.map((achievement, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-r from-red-50 to-transparent p-3 rounded border-l-2 border-red-600"
+                  className="bg-gradient-to-r from-blue-50 to-transparent p-3 rounded border-l-2 border-blue-600"
                 >
                   <p className="text-sm text-gray-700">{achievement}</p>
                 </div>

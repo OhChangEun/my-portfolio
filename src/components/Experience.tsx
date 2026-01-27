@@ -26,9 +26,29 @@ const Experience = ({ refProp }: ExperienceProps) => {
         </p>
       </div>
 
-      <div className="space-y-6">
-        {INTERNSHIP_EXPERIENCE.projects.map((project) => (
-          <InternshipCard key={project.id} project={project} />
+      <div className="relative">
+        {/* 타임라인 수직선 */}
+        <div className="absolute left-4 top-0 bottom-4 w-0.5 bg-gradient-to-b from-blue-200 via-blue-300 to-blue-200"></div>
+
+        {INTERNSHIP_EXPERIENCE.projects.map((project, index) => (
+          <div key={project.id} className="relative">
+            {/* 타임라인 점 */}
+            <div className="absolute left-3 top-15 w-0.5 h-0.5 -translate-x-1/2">
+              <div className="w-3 h-3 bg-blue-400 rounded-full border-4 border-blue-200 shadow-md"></div>
+            </div>
+
+            {/* 날짜 (왼쪽) */}
+            <div className="absolute -left-15 top-13 text-right pr-6 w-20">
+              <p className="text-xs font-semibold text-blue-600">
+                {project.duration}
+              </p>
+            </div>
+
+            {/* 카드 */}
+            <div className="ml-16">
+              <InternshipCard project={project} index={index} />
+            </div>
+          </div>
         ))}
       </div>
     </section>
