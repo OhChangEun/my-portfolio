@@ -26,12 +26,12 @@ const ModalContainer = ({ children, title, onClose }: ModalContainerProps) => {
           <div className="flex flex-col h-full">
             {/* 헤더: title + 닫기 버튼 */}
             <div className="flex justify-between items-center">
-              <h2 className="pl-3 pt-2 py-1 text-gray-800 text-2xl font-semibold">
+              <h2 className="pl-5 pt-4 py-1 text-gray-800 text-2xl font-semibold">
                 {title}
               </h2>
               <button
                 onClick={onClose}
-                className="px-2 py-1 mb-1 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
+                className="px-2 mb-1 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
               >
                 ✕
               </button>

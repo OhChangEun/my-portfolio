@@ -10,7 +10,7 @@ const Experience = ({ refProp }: ExperienceProps) => {
     <section
       ref={refProp}
       id="experience"
-      className="h-screen flex flex-col justify-center"
+      className="min-h-screen flex flex-col justify-center py-20"
     >
       <div className="mb-8">
         <h2 className="text-3xl font-bold mb-2">

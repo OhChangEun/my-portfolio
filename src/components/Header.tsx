@@ -35,13 +35,15 @@ const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
 
   return (
     <header
-      className={`sticky top-0 left-0 w-full z-50 transition-colors duration-100 ${
-        isScrolled ? "bg-white shadow-sm" : "bg-transparent"
+      className={`sticky top-0 left-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "backdrop-blur-md bg-white/30 shadow-[0_1px_0_rgba(0,0,0,0.08)]"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto flex items-center gap-16 pt-4 pb-4 px-16">
         <h1
-          className="text-xl font-semibold cursor-pointer"
+          className="text-xl font-semibold cursor-pointer text-primary"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           창은 포트폴리오

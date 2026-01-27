@@ -2,18 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import "./styles/global.css";
 import Header from "./components/Header";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import AboutMe from "./components/AboutMe";
 import ProjectList from "./components/ProjectList";
 import Experience from "./components/Experience";
+import Tech from "./components/Tech";
 import { PROJECTS } from "./data/projects";
 import Home from "./components/Home";
 
 const MENU_ITEMS = [
   { id: "home", label: "Home" },
-  { id: "aboutMe", label: "About Me" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "contact", label: "Contact" },
+  { id: "contact", label: "Tech Stack" },
 ];
 
 export default function Portfolio() {
@@ -21,14 +20,12 @@ export default function Portfolio() {
 
   const homeRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
-  const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const experienceRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   const sectionRefs: { [key: string]: React.RefObject<HTMLDivElement | null> } =
     {
       home: homeRef,
-      aboutMe: aboutMeRef,
       experience: experienceRef,
       projects: projectsRef,
       contact: contactRef,
@@ -65,19 +62,10 @@ export default function Portfolio() {
 
       {/* 메인 */}
       <main className="container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
-        <Home refProp={homeRef} />
-        <AboutMe refProp={aboutMeRef} />
+        <Home refProp={homeRef} sectionRefs={sectionRefs} />
         <Experience refProp={experienceRef} />
         <ProjectList refProp={projectsRef} projects={PROJECTS} />
-
-        {/* Contact */}
-        <section
-          ref={contactRef}
-          id="contact"
-          className="h-screen flex flex-col items-center justify-center"
-        >
-          <h2 className="text-2xl font-bold mb-6">Contact</h2>
-        </section>
+        <Tech refProp={contactRef} />
       </main>
 
       {/* Footer */}

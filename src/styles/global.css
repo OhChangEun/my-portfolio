@@ -47,6 +47,7 @@
 
 body {
   letter-spacing: -0.5px;
+  background-color: #f5f5f7;
 }
 
 .scrollbar-custom::-webkit-scrollbar {

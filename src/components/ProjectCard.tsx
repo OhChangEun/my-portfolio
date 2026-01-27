@@ -35,7 +35,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           {project.title}
         </h3>
         <p className="text-xs text-secondary line-clamp-2">
-          {project.description}
+          {project.shortDescription}
         </p>
       </div>
 

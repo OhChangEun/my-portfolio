@@ -16,8 +16,14 @@ const ProjectList = ({ refProp, projects }: ProjectsProps) => {
   };
 
   return (
-    <section ref={refProp} id="projects" className="scroll-mt-24">
-      <h2 className="text-2xl mb-6">Projects</h2>
+    <section
+      ref={refProp}
+      id="projects"
+      className="min-h-screen flex flex-col justify-center py-20"
+    >
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold">Projects</h2>
+      </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         {projects.map((p) => (

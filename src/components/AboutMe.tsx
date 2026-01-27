@@ -21,7 +21,7 @@ const AboutMe = ({ refProp }: AboutProps) => {
     <section
       ref={refProp}
       id="about"
-      className="h-screen flex flex-col items-center justify-center"
+      className="min-h-screen flex flex-col items-center justify-center py-20"
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-32">
         {ABOUT_ME_DATA.map((item, idx) => (
