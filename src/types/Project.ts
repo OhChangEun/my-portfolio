@@ -8,4 +8,5 @@ export type Project = {
   background?: string; // 프로젝트 배경
   meaning?: string; // 프로젝트 의미, 학습 내용
   setup?: string; // 설치 및 실행 방법
+  images?: Array<{ src: string; alt: string; caption?: string }>; // 프로젝트 스크린샷
 };

@@ -1,5 +1,5 @@
 import { PROJECTS } from "../data/projects";
-import ProjectImageSlider from "./ProjectImageSlider";
+import ProjectImageGallery from "./ProjectImageGallery";
 import type { ModalProps } from "./public/modals/types";
 
 interface ProjectDetailProps extends ModalProps {
@@ -55,8 +55,12 @@ const ProjectDetail = ({ projectId }: ProjectDetailProps) => {
         </div>
       )}
 
-      {/* 이미지 슬라이더 */}
-      <ProjectImageSlider />
+      {/* 프로젝트 이미지 갤러리 */}
+      {project.images && project.images.length > 0 && (
+        <div className="mt-6 pt-4 border-t border-gray-200">
+          <ProjectImageGallery images={project.images} />
+        </div>
+      )}
     </div>
   );
 };

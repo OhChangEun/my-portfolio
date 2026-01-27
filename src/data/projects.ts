@@ -15,6 +15,33 @@ export const PROJECTS: Project[] = [
     meaning:
       "ERP 프로그램 구조와 실시간 통신 흐름 이해. C#과 React 연동 경험을 습득.",
     setup: "# Install Packages\nnpm install\n\n# Run App\nnpm start",
+    images: [
+      {
+        src: "/src/assets/images/ever-erp/ever-erp_calendar.png",
+        alt: "EVER - 캘린더 일정 관리",
+        caption: "실시간 교육 일정 및 이벤트 관리",
+      },
+      {
+        src: "/src/assets/images/ever-erp/ever-erp_reservation.png",
+        alt: "EVER - 자원 예약 시스템",
+        caption: "교실, 장비 등 자원 예약 관리",
+      },
+      {
+        src: "/src/assets/images/ever-erp/ever-erp_notice.png",
+        alt: "EVER - 공지사항 시스템",
+        caption: "교육생 대상 공지사항 배포",
+      },
+      {
+        src: "/src/assets/images/ever-erp/ever-erp_survey.png",
+        alt: "EVER - 설문조사 관리",
+        caption: "교육생 피드백 및 만족도 조사",
+      },
+      {
+        src: "/src/assets/images/ever-erp/ever-erp_organization.png",
+        alt: "EVER - 조직도 및 팀 관리",
+        caption: "조직 구조 및 팀원 정보 관리",
+      },
+    ],
   },
   {
     id: 2,

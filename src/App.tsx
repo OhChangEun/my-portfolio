@@ -4,12 +4,14 @@ import Header from "./components/Header";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import AboutMe from "./components/AboutMe";
 import ProjectList from "./components/ProjectList";
+import Experience from "./components/Experience";
 import { PROJECTS } from "./data/projects";
 import Home from "./components/Home";
 
 const MENU_ITEMS = [
   { id: "home", label: "Home" },
   { id: "aboutMe", label: "About Me" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "contact", label: "Contact" },
 ];
@@ -20,12 +22,14 @@ export default function Portfolio() {
   const homeRef = useRef<HTMLDivElement | null>(null);
   const projectsRef = useRef<HTMLDivElement | null>(null);
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const experienceRef = useRef<HTMLDivElement | null>(null);
   const contactRef = useRef<HTMLDivElement | null>(null);
 
   const sectionRefs: { [key: string]: React.RefObject<HTMLDivElement | null> } =
     {
       home: homeRef,
       aboutMe: aboutMeRef,
+      experience: experienceRef,
       projects: projectsRef,
       contact: contactRef,
     };
@@ -63,6 +67,7 @@ export default function Portfolio() {
       <main className="container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
         <Home refProp={homeRef} />
         <AboutMe refProp={aboutMeRef} />
+        <Experience refProp={experienceRef} />
         <ProjectList refProp={projectsRef} projects={PROJECTS} />
 
         {/* Contact */}
