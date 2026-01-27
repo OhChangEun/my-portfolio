@@ -87,27 +87,27 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/OhChangEun/_4EVER_FE",
     images: [
       {
-        src: "/src/assets/images/everp/everp_dashboard.png",
+        src: "/images/everp/everp_dashboard.png",
         alt: "EVERP - 통합 대시보드",
         caption: "3개 도메인 핵심 지표를 한눈에 보는 통합 대시보드",
       },
       {
-        src: "/src/assets/images/everp/everp_purchase.png",
+        src: "/images/everp/everp_purchase.png",
         alt: "EVERP - 구매관리 모듈",
         caption: "구매요청부터 입고까지 전체 프로세스 추적",
       },
       {
-        src: "/src/assets/images/everp/everp_hrm.png",
+        src: "/images/everp/everp_hrm.png",
         alt: "EVERP - 인사관리 모듈",
         caption: "부서/직급 조직도 및 인사 카드 관리",
       },
       {
-        src: "/src/assets/images/everp/everp_production.png",
+        src: "/images/everp/everp_production.png",
         alt: "EVERP - 생산관리 모듈",
         caption: "D3.js 기반 BOM 트리 구조 시각화",
       },
       {
-        src: "/src/assets/images/everp/everp_modal_system.png",
+        src: "/images/everp/everp_modal_system.png",
         alt: "EVERP - 공통 모달 시스템",
         caption: "Context API 기반 일관된 모달 UX",
       },
@@ -198,52 +198,52 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/OhChangEun/Team1_FE",
     images: [
       {
-        src: "/src/assets/images/cinever/home.png",
+        src: "/images/cinever/home.png",
         alt: "Cinever - 메인 화면",
         caption: "서비스 메인 홈 화면",
       },
       {
-        src: "/src/assets/images/cinever/trending-movies.png",
+        src: "/images/cinever/trending-movies.png",
         alt: "Cinever - 실시간 인기 영화",
         caption: "실시간 인기 영화 랭킹",
       },
       {
-        src: "/src/assets/images/cinever/latest-reviews.png",
+        src: "/images/cinever/latest-reviews.png",
         alt: "Cinever - 최신 리뷰",
         caption: "최신 사용자 리뷰 피드",
       },
       {
-        src: "/src/assets/images/cinever/genre-top100.png",
+        src: "/images/cinever/genre-top100.png",
         alt: "Cinever - 장르별 TOP 100",
         caption: "장르별 영화 TOP 100 리스트",
       },
       {
-        src: "/src/assets/images/cinever/movie-detail.png",
+        src: "/images/cinever/movie-detail.png",
         alt: "Cinever - 영화 상세",
         caption: "영화 상세 정보 페이지",
       },
       {
-        src: "/src/assets/images/cinever/movie-stills.png",
+        src: "/images/cinever/movie-stills.png",
         alt: "Cinever - 영화 스틸컷",
         caption: "영화 스틸컷 이미지 리스트",
       },
       {
-        src: "/src/assets/images/cinever/reviewer-list.png",
+        src: "/images/cinever/reviewer-list.png",
         alt: "Cinever - 리뷰어 목록",
         caption: "리뷰어 전체 목록 페이지",
       },
       {
-        src: "/src/assets/images/cinever/reviewer-detail.png",
+        src: "/images/cinever/reviewer-detail.png",
         alt: "Cinever - 리뷰어 상세",
         caption: "리뷰어 상세 프로필 페이지",
       },
       {
-        src: "/src/assets/images/cinever/search-results.png",
+        src: "/images/cinever/search-results.png",
         alt: "Cinever - 검색 결과",
         caption: "통합 검색 결과 페이지",
       },
       {
-        src: "/src/assets/images/cinever/daily-feed.png",
+        src: "/images/cinever/daily-feed.png",
         alt: "Cinever - 날짜별 피드",
         caption: "날짜 기준 콘텐츠 피드",
       },
@@ -351,27 +351,27 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/OhChangEun/Ever-FE",
     images: [
       {
-        src: "/src/assets/images/ever-erp/ever-erp_calendar.png",
+        src: "/images/ever-erp/ever-erp_calendar.png",
         alt: "EVER - 캘린더 일정 관리",
         caption: "실시간 교육 일정 및 이벤트 관리",
       },
       {
-        src: "/src/assets/images/ever-erp/ever-erp_reservation.png",
+        src: "/images/ever-erp/ever-erp_reservation.png",
         alt: "EVER - 자원 예약 시스템",
         caption: "교실, 장비 등 자원 예약 관리",
       },
       {
-        src: "/src/assets/images/ever-erp/ever-erp_notice.png",
+        src: "/images/ever-erp/ever-erp_notice.png",
         alt: "EVER - 공지사항 시스템",
         caption: "교육생 대상 공지사항 배포",
       },
       {
-        src: "/src/assets/images/ever-erp/ever-erp_survey.png",
+        src: "/images/ever-erp/ever-erp_survey.png",
         alt: "EVER - 설문조사 관리",
         caption: "교육생 피드백 및 만족도 조사",
       },
       {
-        src: "/src/assets/images/ever-erp/ever-erp_organization.png",
+        src: "/images/ever-erp/ever-erp_organization.png",
         alt: "EVER - 조직도 및 팀 관리",
         caption: "조직 구조 및 팀원 정보 관리",
       },

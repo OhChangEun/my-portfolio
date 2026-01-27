@@ -1,4 +1,4 @@
-import profileImg from "../assets/images/profile.png";
+import profileImg from "/images/profile.png";
 import { SiGithub, SiNotion } from "react-icons/si";
 import { SiGmail } from "react-icons/si";
 import { useState } from "react";

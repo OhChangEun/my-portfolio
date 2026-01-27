@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { EVER_ERP_IMAGES } from "../assets/images/ever-erp";
+import { EVER_ERP_IMAGES } from "../../public/images/ever-erp";
 
 const images = Object.values(EVER_ERP_IMAGES); // 이미지 객체를 배열로 변환
 

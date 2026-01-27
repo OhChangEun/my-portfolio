@@ -123,12 +123,12 @@ export const INTERNSHIP_EXPERIENCE: InternshipExperience = {
       ],
       images: [
         {
-          src: "/src/assets/images/internship/example1.png",
+          src: "/images/internship/example1.png",
           alt: "스마트 DTC 가이드 - 데이터 통합 대시보드",
           caption: "다양한 형식의 데이터를 단일 DB로 통합 관리",
         },
         {
-          src: "/src/assets/images/internship/example2.png",
+          src: "/images/internship/example2.png",
           alt: "스마트 DTC 가이드 - 비동기 처리 UI",
           caption: "비동기 처리로 실시간 진행 상태 표시",
         },
