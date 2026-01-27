@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
         "SSE 기반 실시간 알림 시스템",
         "역할 기반 접근 제어(RBAC) 및 권한 관리",
       ],
-      link: "https://everp.example.com",
+      // link: "https://everp.example.com",
     },
     tech: [
       "Next.js 14",
@@ -185,7 +185,7 @@ export const PROJECTS: Project[] = [
         "역할 기반 라우팅 (ADMIN/일반 사용자)",
         "로그인/로그아웃 전역 상태 관리",
       ],
-      link: "https://cinever.example.com",
+      // link: "https://cinever.example.com",
     },
     tech: [
       "Vue 3",
@@ -345,7 +345,7 @@ export const PROJECTS: Project[] = [
         "조직도 및 팀원 정보 조회",
         "실시간 알림 및 업데이트",
       ],
-      link: "https://ever-erp.example.com",
+      // link: "https://ever-erp.example.com",
     },
     tech: ["React 19", "TypeScript", "Redux Toolkit", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/OhChangEun/Ever-FE",
