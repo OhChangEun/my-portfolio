@@ -10,7 +10,7 @@ const ModalContainer = ({ children, title, onClose }: ModalContainerProps) => {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed z-9999 inset-0 flex justify-center items-center"
+        className="fixed z-9999 inset-0 flex justify-center items-center bg-black/40 backdrop-blur-sm px-2 sm:px-4"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -21,23 +21,23 @@ const ModalContainer = ({ children, title, onClose }: ModalContainerProps) => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.95, opacity: 0 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative p-4 w-[40vw] max-w-[1200px] h-[90vh] border border-gray-100 bg-white rounded-xl shadow-xl"
+          className="relative p-3 sm:p-4 w-full sm:w-[90vw] md:w-[70vw] lg:w-[60vw] xl:w-[50vw] max-w-[1200px] h-[85vh] sm:h-[90vh] border border-gray-100 bg-white rounded-xl shadow-xl"
         >
           <div className="flex flex-col h-full">
             {/* 헤더: title + 닫기 버튼 */}
             <div className="flex justify-between items-center">
-              <h2 className="pl-5 pt-4 py-1 text-gray-800 text-2xl font-semibold">
+              <h2 className="pl-2 sm:pl-5 pt-2 sm:pt-4 py-1 text-gray-800 text-lg sm:text-xl md:text-2xl font-semibold">
                 {title}
               </h2>
               <button
                 onClick={onClose}
-                className="px-2.5 pt-1 pb-1.5 mb-4 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer"
+                className="px-2 sm:px-2.5 pt-1 pb-1 sm:pb-1.5 mb-2 sm:mb-4 rounded-md text-gray-600 hover:bg-gray-100 dark:hover:text-white cursor-pointer text-lg sm:text-xl"
               >
                 ✕
               </button>
             </div>
             {/* 모달 본문 */}
-            <div className="pt-4 p-2 scrollbar-custom overflow-auto">
+            <div className="pt-2 sm:pt-4 p-1 sm:p-2 scrollbar-custom overflow-auto">
               {children}
             </div>
           </div>

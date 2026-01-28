@@ -19,13 +19,13 @@ const ProjectList = ({ refProp, projects }: ProjectsProps) => {
     <section
       ref={refProp}
       id="projects"
-      className="min-h-screen flex flex-col justify-center py-20"
+      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20"
     >
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold">Projects</h2>
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold">Projects</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
         {projects.map((p) => (
           <ProjectCard
             key={p.id}

@@ -41,9 +41,9 @@ const Header = ({ menuItems, selectedMenu, sectionRefs }: HeaderProps) => {
           : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto flex items-center gap-16 pt-4 pb-4 px-16">
+      <div className="container mx-auto flex items-center gap-4 sm:gap-8 md:gap-16 pt-3 pb-3 px-4 sm:px-6 md:px-12 lg:px-16">
         <h1
-          className="text-xl font-semibold cursor-pointer text-primary"
+          className="text-base sm:text-lg md:text-xl font-semibold cursor-pointer text-primary whitespace-nowrap"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           창은 포트폴리오

@@ -83,33 +83,36 @@ const Tech = ({ refProp }: TechProps) => {
     <section
       ref={refProp}
       id="contact"
-      className="min-h-screen flex flex-col justify-center py-20"
+      className="min-h-screen flex flex-col justify-center py-12 sm:py-16 md:py-20"
     >
-      <div className="mb-8">
-        <h2 className="text-3xl font-bold">Tech Stack</h2>
+      <div className="mb-6 sm:mb-8">
+        <h2 className="text-2xl sm:text-3xl font-bold">Tech Stack</h2>
       </div>
 
-      <div className="space-y-14">
+      <div className="space-y-8 sm:space-y-10 md:space-y-14">
         {TECH_DATA.map((category, idx) => (
           <div key={idx}>
-            <div className="mb-4">
-              <h3 className="text-lg font-normal text-primary mb-3">
+            <div className="mb-3 sm:mb-4">
+              <h3 className="text-base sm:text-lg font-normal text-primary mb-2 sm:mb-3">
                 {category.title}
               </h3>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 sm:gap-3">
               {category.items.map((tech, techIdx) => (
                 <div
                   key={techIdx}
-                  className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-white rounded-lg"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-white/90 border border-white rounded-lg"
                 >
                   {tech.icon && (
-                    <div className="text-lg" style={{ color: tech.color }}>
+                    <div
+                      className="text-base sm:text-lg"
+                      style={{ color: tech.color }}
+                    >
                       {tech.icon}
                     </div>
                   )}
-                  <span className="text-sm font-medium text-primary">
+                  <span className="text-xs sm:text-sm font-medium text-primary">
                     {tech.name}
                   </span>
                 </div>

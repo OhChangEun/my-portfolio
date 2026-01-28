@@ -48,7 +48,7 @@ const ScrollToTopButton = ({
         if (e.key === "Enter") scrollToTop();
       }}
       // 화면 오른쪽 아래 고정
-      className={`fixed bottom-6 right-6 z-50 ${sizeClass} cursor-pointer flex items-center justify-center rounded-full shadow-lg focus:outline-none transition-transform transform ${
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-10 h-10 sm:${sizeClass} cursor-pointer flex items-center justify-center rounded-full shadow-lg focus:outline-none transition-transform transform ${
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-6 opacity-0 pointer-events-none"
@@ -56,7 +56,7 @@ const ScrollToTopButton = ({
       // 숨김 상태일 때 시각적으로는 보이지 않게, 스크린리더에는 적절히 설명되도록 처리
       aria-hidden={!visible}
     >
-      <IoIosArrowRoundUp className="text-white text-3xl font-light" />
+      <IoIosArrowRoundUp className="text-white text-2xl sm:text-3xl font-light" />
     </button>
   );
 };

@@ -34,11 +34,11 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         borderColor: "rgb(174, 187, 255, 0.7)",
         transition: { duration: 0.2 },
       }}
-      className="group rounded-lg p-6 bg-white border flex flex-col justify-between cursor-pointer"
+      className="group rounded-lg p-4 sm:p-6 bg-white border flex flex-col justify-between cursor-pointer"
       onClick={onClick}
     >
       {/* 이미지 또는 아이콘 영역 */}
-      <div className="mb-4 h-64 bg-gradient-to-r from-blue-50 to-red-50 rounded-md flex items-center justify-center overflow-hidden">
+      <div className="mb-3 sm:mb-4 h-48 sm:h-56 md:h-64 bg-gradient-to-r from-blue-50 to-red-50 rounded-md flex items-center justify-center overflow-hidden">
         {project.images && project.images.length > 0 ? (
           <img
             src={project.images[0].src}
@@ -51,21 +51,21 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       </div>
 
       {/* 제목 + 설명 */}
-      <div className="flex-1 mb-3">
-        <h3 className="text-lg font-bold text-primary transition-colors">
+      <div className="flex-1 mb-2 sm:mb-3">
+        <h3 className="text-base sm:text-lg font-bold text-primary transition-colors">
           {project.title}
         </h3>
-        <p className="text-sm text-secondary line-clamp-2">
+        <p className="text-xs sm:text-sm text-secondary line-clamp-2">
           {project.shortDescription}
         </p>
       </div>
 
       {/* 기술 스택 */}
-      <div className="flex flex-wrap gap-1 mb-3">
+      <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
         {project.tech.slice(0, 10).map((t) => (
           <span
             key={t}
-            className="text-xs px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full border border-blue-200"
+            className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.5 bg-blue-50 text-blue-700 rounded-full border border-blue-200"
           >
             {t}
           </span>

@@ -69,7 +69,7 @@ export default function Portfolio() {
       />
 
       {/* 메인 */}
-      <main className="container mx-auto px-6 md:px-12 lg:px-32 space-b-32">
+      <main className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 space-b-32">
         <Home refProp={homeRef} sectionRefs={sectionRefs} />
         <Experience refProp={experienceRef} />
         <ProjectList refProp={projectsRef} projects={PROJECTS} />
@@ -77,7 +77,7 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white text-center py-4 text-sm">
+      <footer className="bg-primary text-white text-center py-3 sm:py-4 text-xs sm:text-sm px-4">
         © {new Date().getFullYear()} 창은 오 — Built with TypeScript + React +
         Tailwind
       </footer>
