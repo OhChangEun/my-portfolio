@@ -83,12 +83,35 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* 이미지 */}
-                <div className="bg-black rounded-lg overflow-hidden">
+                <div className="relative bg-black rounded-lg overflow-hidden">
                   <img
                     src={images[selectedIndex].src}
                     alt={images[selectedIndex].alt}
                     className="w-full h-128 max-h-[80vh] object-scale-down"
                   />
+
+                  {/* 네비게이션 버튼 - 이미지 위에 수직 중앙 고정 */}
+                  {images.length > 1 && (
+                    <>
+                      <motion.button
+                        onClick={goToPrevious}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/70 text-white p-3 rounded-full transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <FiChevronLeft className="text-2xl" />
+                      </motion.button>
+
+                      <motion.button
+                        onClick={goToNext}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/70 text-white p-3 rounded-full transition-colors"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <FiChevronRight className="text-2xl" />
+                      </motion.button>
+                    </>
+                  )}
                 </div>
 
                 {/* 캡션 */}
@@ -119,29 +142,6 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                     />
                   ))}
                 </div>
-
-                {/* 네비게이션 버튼 */}
-                {images.length > 1 && (
-                  <>
-                    <motion.button
-                      onClick={goToPrevious}
-                      className="absolute left-0 top-60 -translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FiChevronLeft className="text-2xl" />
-                    </motion.button>
-
-                    <motion.button
-                      onClick={goToNext}
-                      className="absolute right-0 top-60 translate-x-16 cursor-pointer bg-white/20 hover:bg-white/40 text-white p-3 rounded-full transition-colors"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <FiChevronRight className="text-2xl" />
-                    </motion.button>
-                  </>
-                )}
 
                 {/* 닫기 버튼 */}
                 <motion.button

@@ -71,7 +71,7 @@ export const PROJECTS: Project[] = [
         "SSE 기반 실시간 알림 시스템",
         "역할 기반 접근 제어(RBAC) 및 권한 관리",
       ],
-      // link: "https://everp.example.com",
+      link: "https://4ever-fe.vercel.app/login",
     },
     tech: [
       "Next.js 14",
@@ -196,6 +196,7 @@ export const PROJECTS: Project[] = [
       "Axios",
     ],
     githubLink: "https://github.com/OhChangEun/Team1_FE",
+    youtubeLink: "https://www.youtube.com/watch?v=9Rxz5y3LzUs",
     images: [
       {
         src: "/images/cinever/home.png",
@@ -349,6 +350,7 @@ export const PROJECTS: Project[] = [
     },
     tech: ["React 19", "TypeScript", "Redux Toolkit", "TailwindCSS", "Vite"],
     githubLink: "https://github.com/OhChangEun/Ever-FE",
+    youtubeLink: "https://youtu.be/zfQJlEwTOXM",
     images: [
       {
         src: "/images/ever-erp/ever-erp_calendar.png",

@@ -28,13 +28,13 @@ const Experience = ({ refProp }: ExperienceProps) => {
 
       <div className="relative">
         {/* 타임라인 수직선 */}
-        <div className="absolute left-4 top-0 bottom-4 w-0.5 bg-gradient-to-b from-blue-200 via-blue-300 to-blue-200"></div>
+        <div className="absolute left-3.5 top-0 bottom-4 w-0.5 bg-gradient-to-b from-blue-200 via-blue-300 to-blue-200"></div>
 
         {INTERNSHIP_EXPERIENCE.projects.map((project, index) => (
           <div key={project.id} className="relative">
             {/* 타임라인 점 */}
-            <div className="absolute left-3 top-10 sm:top-15 w-0.5 h-0.5 -translate-x-1/2">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 bg-blue-400 rounded-full border-2 sm:border-4 border-blue-200 shadow-md"></div>
+            <div className="absolute left-3.5 top-10 sm:top-15 -translate-x-1/2">
+              <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-blue-400 rounded-full border-2 sm:border-4 border-blue-200 shadow-md"></div>
             </div>
 
             {/* 날짜 (왼쪽) */}

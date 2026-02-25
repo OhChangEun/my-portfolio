@@ -35,7 +35,7 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
       id="home"
       className="min-h-screen flex justify-center pb-8 sm:pb-12 md:pb-16 pt-8 sm:pt-12 md:pt-0"
     >
-      <div className="flex flex-col md:flex-row w-full md:min-w-7/12 items-center justify-between gap-8 md:gap-12">
+      <div className="flex flex-col md:flex-row w-full md:min-w-7/12 items-center justify-between gap-4 md:gap-8">
         {/* 왼쪽: 소개글 */}
         <div className="w-full max-w-3xl text-left flex flex-col gap-6 md:gap-8 order-2 md:order-1">
           <div>
@@ -101,51 +101,51 @@ const Home = ({ refProp, sectionRefs }: HomeProps) => {
           </div>
 
           {/* 소셜 링크 */}
-          <div className="flex gap-2 sm:gap-3 pt-4 sm:pt-6 justify-center md:justify-start">
+          <div className="flex gap-2 pt-4 sm:pt-6 justify-center md:justify-start">
             <a
               href="https://github.com/OhChangEun"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 sm:p-3 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
+              className="group p-2 sm:p-2.5 rounded-xl transition-all duration-300 border border-gray-300 hover:border-gray-700 hover:bg-gray-700"
               title="GitHub"
             >
               <SiGithub
-                size={20}
-                className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-white transition-colors duration-300"
+                size={18}
+                className="sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300"
               />
             </a>
             <a
               href="https://www.notion.so/s-207e4e4f965780c28a75e68a3a6f4060?source=copy_link"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 sm:p-3 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
+              className="group p-2 sm:p-2.5 rounded-xl transition-all duration-300 border border-gray-300 hover:border-gray-700 hover:bg-gray-700"
               title="notion"
             >
               <SiNotion
-                size={20}
-                className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-white transition-colors duration-300"
+                size={18}
+                className="sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300"
               />
             </a>
             <a
               href="https://solved.ac/profile/dwc07109"
               target="_blank"
               rel="noopener noreferrer"
-              className="group p-2 sm:p-2.5 rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
+              className="group p-2 sm:p-2.5 rounded-xl transition-all duration-300 border border-gray-300 hover:border-gray-700 hover:bg-gray-700"
               title="BOJ"
             >
               <FaCode
-                size={22}
-                className="sm:w-7 sm:h-7 text-gray-700 group-hover:text-white transition-colors duration-300"
+                size={18}
+                className="sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300"
               />
             </a>
             <button
               onClick={handleCopyEmail}
-              className="group relative p-2 sm:p-3 cursor-pointer rounded-2xl transition-all duration-300 border border-gray-500 hover:border-gray-700 hover:bg-gray-700"
+              className="group relative p-2 sm:p-2.5 cursor-pointer rounded-xl transition-all duration-300 border border-gray-300 hover:border-gray-700 hover:bg-gray-700"
               title="Email"
             >
               <SiGmail
-                size={20}
-                className="sm:w-6 sm:h-6 text-gray-700 group-hover:text-white transition-colors duration-300"
+                size={18}
+                className="sm:w-6 sm:h-6 text-gray-600 group-hover:text-white transition-colors duration-300"
               />
               {copyMessage && (
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-800 text-white text-xs rounded whitespace-nowrap">

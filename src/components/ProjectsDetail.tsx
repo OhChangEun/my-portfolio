@@ -2,7 +2,7 @@ import { useState } from "react";
 import { PROJECTS } from "../data/projects";
 import ProjectImageGallery from "./ProjectImageGallery";
 import TechnicalStoryCard from "./TechnicalStoryCard";
-import { FiGithub, FiGlobe, FiChevronDown } from "react-icons/fi";
+import { FiGithub, FiGlobe, FiChevronDown, FiYoutube } from "react-icons/fi";
 import { motion } from "framer-motion";
 import type { ModalProps } from "./public/modals/types";
 import type { RoleCategory } from "../types/Project";
@@ -56,6 +56,17 @@ const ProjectDetail = ({ projectId }: ProjectDetailProps) => {
             >
               <FiGithub className="text-xs sm:text-sm" />
               GitHub
+            </a>
+          )}
+          {project.youtubeLink && project.youtubeLink !== "#" && (
+            <a
+              href={project.youtubeLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 py-1 sm:py-1.5 bg-red-500 hover:bg-red-600 text-white rounded text-[10px] sm:text-xs font-medium transition-colors"
+            >
+              <FiYoutube className="text-xs sm:text-sm" />
+              YouTube
             </a>
           )}
         </div>

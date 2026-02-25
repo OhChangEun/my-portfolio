@@ -77,9 +77,39 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-primary text-white text-center py-3 sm:py-4 text-xs sm:text-sm px-4">
-        © {new Date().getFullYear()} 창은 오 — Built with TypeScript + React +
-        Tailwind
+      <footer className="bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900 text-white px-6 py-6 sm:py-8">
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0">
+          <div className="flex flex-col items-center sm:items-start gap-1">
+            <span className="text-sm font-semibold tracking-wide text-white">
+              오창은 · Frontend Developer
+            </span>
+            <span className="text-xs text-gray-400">dwc07109@gmail.com</span>
+          </div>
+          <div className="text-xs text-gray-500 text-center">
+            © {new Date().getFullYear()} — Built with{" "}
+            <span className="text-blue-400">TypeScript</span> +{" "}
+            <span className="text-blue-400">React</span> +{" "}
+            <span className="text-blue-400">Tailwind</span>
+          </div>
+          <div className="flex gap-4 text-xs text-gray-400">
+            <a
+              href="https://github.com/OhChangEun"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.notion.so/s-207e4e4f965780c28a75e68a3a6f4060?source=copy_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              Notion
+            </a>
+          </div>
+        </div>
       </footer>
 
       <ScrollToTopButton />

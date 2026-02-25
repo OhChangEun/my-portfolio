@@ -29,6 +29,7 @@ export type Project = {
   projectInfo: ProjectInfo; // 프로젝트 정보
   tech: string[];
   githubLink?: string; // GitHub 링크
+  youtubeLink?: string; // YouTube 링크
   images?: Array<{ src: string; alt: string; caption?: string }>;
   technicalStories?: TechnicalStory[]; // 기술적 의사결정 스토리
 };
