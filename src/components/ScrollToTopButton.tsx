@@ -4,8 +4,6 @@ import { IoIosArrowRoundUp } from "react-icons/io";
 type Props = {
   /** 스크롤이 이 값(px) 이상일 때 버튼이 보임. 기본 50px */
   threshold?: number;
-  /** 버튼 크기 (Tailwind width/height 값) */
-  sizeClass?: string;
   /** 추가 클래스 이름 */
   className?: string;
   /** 배경을 투명하게 하고 싶을 때 */
@@ -15,7 +13,6 @@ type Props = {
 // 기본적으로 Tailwind를 사용하는 깔끔한 Scroll-to-Top 버튼 컴포넌트
 const ScrollToTopButton = ({
   threshold = 150,
-  sizeClass = "w-11 h-11",
   className = "",
   transparent = false,
 }: Props) => {
