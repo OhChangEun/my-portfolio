@@ -7,8 +7,15 @@ interface ProjectImageGalleryProps {
   images?: Array<{ src: string; alt: string; caption?: string }>;
 }
 
+const PLACEHOLDER_SVG = "/images/no_prepared_image.png";
+
 const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [erroredImages, setErroredImages] = useState<Set<number>>(new Set());
+
+  const handleImageError = (idx: number) => {
+    setErroredImages((prev) => new Set(prev).add(idx));
+  };
 
   if (!images || images.length === 0) return null;
 
@@ -44,9 +51,14 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
               onClick={() => setSelectedIndex(idx)}
             >
               <img
-                src={image.src}
+                src={erroredImages.has(idx) ? PLACEHOLDER_SVG : image.src}
                 alt={image.alt}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                className={`w-full h-48 transition-transform duration-300 ${
+                  erroredImages.has(idx)
+                    ? "object-contain bg-gray-100"
+                    : "object-cover group-hover:scale-105"
+                }`}
+                onError={() => handleImageError(idx)}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                 <div className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -82,35 +94,48 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                 className="relative max-w-4xl w-full"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* 이미지 */}
-                <div className="relative bg-black rounded-lg overflow-hidden">
-                  <img
-                    src={images[selectedIndex].src}
-                    alt={images[selectedIndex].alt}
-                    className="w-full h-128 max-h-[80vh] object-scale-down"
-                  />
+                {/* 이미지 + 네비게이션 버튼 */}
+                <div className="flex items-center gap-3">
+                  {/* 왼쪽 버튼 */}
+                  {images.length > 1 ? (
+                    <motion.button
+                      onClick={goToPrevious}
+                      className="flex-shrink-0 cursor-pointer bg-white/50 hover:bg-white/70 text-gray-800 p-2 rounded-full shadow-lg transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FiChevronLeft className="text-2xl" />
+                    </motion.button>
+                  ) : (
+                    <div className="flex-shrink-0 w-12" />
+                  )}
 
-                  {/* 네비게이션 버튼 - 이미지 위에 수직 중앙 고정 */}
-                  {images.length > 1 && (
-                    <>
-                      <motion.button
-                        onClick={goToPrevious}
-                        className="absolute left-2 top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/70 text-white p-3 rounded-full transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FiChevronLeft className="text-2xl" />
-                      </motion.button>
+                  {/* 이미지 */}
+                  <div className="relative bg-black rounded-lg overflow-hidden flex-1">
+                    <img
+                      src={
+                        erroredImages.has(selectedIndex)
+                          ? PLACEHOLDER_SVG
+                          : images[selectedIndex].src
+                      }
+                      alt={images[selectedIndex].alt}
+                      className="w-full max-h-[80vh] object-contain bg-gray-100"
+                      onError={() => handleImageError(selectedIndex)}
+                    />
+                  </div>
 
-                      <motion.button
-                        onClick={goToNext}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 cursor-pointer bg-black/40 hover:bg-black/70 text-white p-3 rounded-full transition-colors"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <FiChevronRight className="text-2xl" />
-                      </motion.button>
-                    </>
+                  {/* 오른쪽 버튼 */}
+                  {images.length > 1 ? (
+                    <motion.button
+                      onClick={goToNext}
+                      className="flex-shrink-0 cursor-pointer bg-white/50 hover:bg-white/70 text-gray-800 p-2 rounded-full shadow-lg transition-colors"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <FiChevronRight className="text-2xl" />
+                    </motion.button>
+                  ) : (
+                    <div className="flex-shrink-0 w-12" />
                   )}
                 </div>
 
@@ -142,16 +167,6 @@ const ProjectImageGallery = ({ images }: ProjectImageGalleryProps) => {
                     />
                   ))}
                 </div>
-
-                {/* 닫기 버튼 */}
-                <motion.button
-                  onClick={() => setSelectedIndex(null)}
-                  className="absolute top-4 right-4 cursor-pointer bg-black/70 hover:bg-black/60 text-white p-1.5 rounded-full transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FiX className="text-xl" />
-                </motion.button>
               </motion.div>
             </motion.div>
           </AnimatePresence>,

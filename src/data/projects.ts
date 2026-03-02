@@ -87,9 +87,9 @@ export const PROJECTS: Project[] = [
     githubLink: "https://github.com/OhChangEun/_4EVER_FE",
     images: [
       {
-        src: "/images/everp/everp_dashboard.png",
-        alt: "EVERP - 통합 대시보드",
-        caption: "3개 도메인 핵심 지표를 한눈에 보는 통합 대시보드",
+        src: "/images/4ever-erp/production_quotation.png",
+        alt: "EvERP - 생산 견적서",
+        caption: "생산 견적서",
       },
       {
         src: "/images/everp/everp_purchase.png",
@@ -353,27 +353,27 @@ export const PROJECTS: Project[] = [
     youtubeLink: "https://youtu.be/zfQJlEwTOXM",
     images: [
       {
-        src: "/images/ever-erp/ever-erp_calendar.png",
+        src: "/images/ever/ever-erp_calendar.png",
         alt: "EVER - 캘린더 일정 관리",
         caption: "실시간 교육 일정 및 이벤트 관리",
       },
       {
-        src: "/images/ever-erp/ever-erp_reservation.png",
+        src: "/images/ever/ever-erp_reservation.png",
         alt: "EVER - 자원 예약 시스템",
         caption: "교실, 장비 등 자원 예약 관리",
       },
       {
-        src: "/images/ever-erp/ever-erp_notice.png",
+        src: "/images/ever/ever-erp_notice.png",
         alt: "EVER - 공지사항 시스템",
         caption: "교육생 대상 공지사항 배포",
       },
       {
-        src: "/images/ever-erp/ever-erp_survey.png",
+        src: "/images/ever/ever-erp_survey.png",
         alt: "EVER - 설문조사 관리",
         caption: "교육생 피드백 및 만족도 조사",
       },
       {
-        src: "/images/ever-erp/ever-erp_organization.png",
+        src: "/images/ever/ever-erp_organization.png",
         alt: "EVER - 조직도 및 팀 관리",
         caption: "조직 구조 및 팀원 정보 관리",
       },
